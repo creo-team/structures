@@ -1,0 +1,15 @@
+# Structures Project
+
+Shared TypeScript structures for **Creo** projects. Enums, interfaces, types. Zero runtime deps.
+
+## Key Resources
+
+| File | Purpose |
+|------|---------|
+| `src/misc.ts` | Env, Stage, HttpStatus, FileExtension, etc. |
+| `src/aws.ts` | AwsRegion |
+| `src/package-json.ts` | PackageJson types |
+
+## Verification
+
+`npm test && npm run build`

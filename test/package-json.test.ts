@@ -1,4 +1,4 @@
-import { describe, expect, it } from '@jest/globals'
+import { describe, expect, it } from 'vitest'
 
 import type { Bugs, Dependencies, PackageJson, Person, PublishConfig, Repository } from '../src/package-json'
 

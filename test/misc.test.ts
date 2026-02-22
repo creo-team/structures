@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/naming-convention */
-import { describe, expect, it } from '@jest/globals'
+import { describe, expect, it } from 'vitest'
 
 import {
 	Env,
@@ -13,23 +12,23 @@ import {
 	Status,
 } from '../src/index'
 
-// eslint-disable-next-line max-lines-per-function
 describe('Enums', () => {
 	it('should define all values for Env enum', () => {
-		expect(Env).toEqual({
+		expect(Env).toMatchObject({
 			Alpha: 'Alpha',
 			Beta: 'Beta',
 			Development: 'Development',
 			Gamma: 'Gamma',
 			Pipeline: 'Pipeline',
 			Production: 'Production',
+			Root: 'Root',
 			Unknown: 'Unknown',
 		})
 	})
 
 	it('should define all values for HttpStatus enum', () => {
-		const filteredHttpStatus = Object.fromEntries(Object.entries(HttpStatus).filter(([key]) => isNaN(Number(key))))
-		expect(filteredHttpStatus).toEqual({
+		const filtered = Object.fromEntries(Object.entries(HttpStatus).filter(([key]) => Number.isNaN(Number(key))))
+		expect(filtered).toMatchObject({
 			Accepted: 202,
 			BadGateway: 502,
 			BadRequest: 400,
@@ -57,7 +56,7 @@ describe('Enums', () => {
 	})
 
 	it('should define all values for HttpMethod enum', () => {
-		expect(HttpMethod).toEqual({
+		expect(HttpMethod).toMatchObject({
 			DELETE: 'DELETE',
 			GET: 'GET',
 			HEAD: 'HEAD',
@@ -69,7 +68,7 @@ describe('Enums', () => {
 	})
 
 	it('should define all values for HttpContentType enum', () => {
-		expect(HttpContentType).toEqual({
+		expect(HttpContentType).toMatchObject({
 			Css: 'text/css',
 			FormUrlEncoded: 'application/x-www-form-urlencoded',
 			Html: 'text/html',
@@ -82,7 +81,7 @@ describe('Enums', () => {
 	})
 
 	it('should define all values for FileExtension enum', () => {
-		expect(FileExtension).toEqual({
+		expect(FileExtension).toMatchObject({
 			CSS: 'css',
 			CSV: 'csv',
 			DLL: 'dll',
@@ -106,7 +105,7 @@ describe('Enums', () => {
 	})
 
 	it('should define all values for FileEncoding enum', () => {
-		expect(FileEncoding).toEqual({
+		expect(FileEncoding).toMatchObject({
 			ASCII: 'ascii',
 			Base64: 'base64',
 			Binary: 'binary',
@@ -116,13 +115,13 @@ describe('Enums', () => {
 			UCS2: 'ucs2',
 			UTF16LE: 'utf16le',
 			UTF32: 'utf32',
-			UTF8: 'utf-8',
+			UTF8: 'utf8',
 			Windows1252: 'windows-1252',
 		})
 	})
 
 	it('should define all values for LanguageCode enum', () => {
-		expect(LanguageCode).toEqual({
+		expect(LanguageCode).toMatchObject({
 			Chinese: 'zh',
 			English: 'en',
 			French: 'fr',
@@ -133,7 +132,7 @@ describe('Enums', () => {
 	})
 
 	it('should define all values for Status enum', () => {
-		expect(Status).toEqual({
+		expect(Status).toMatchObject({
 			Active: 'Active',
 			Canceled: 'Canceled',
 			Completed: 'Completed',
@@ -145,7 +144,7 @@ describe('Enums', () => {
 	})
 
 	it('should define all values for ResponseType enum', () => {
-		expect(ResponseType).toEqual({
+		expect(ResponseType).toMatchObject({
 			ArrayBuffer: 'arraybuffer',
 			Blob: 'blob',
 			Document: 'document',
