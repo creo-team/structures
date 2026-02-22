@@ -25,8 +25,6 @@ jobs:
 
       - uses: creo-team/action-release@v1
         with:
-          # PAT required for real releases (GITHUB_TOKEN-created releases don't trigger Publish)
-          token: ${{ (github.event_name == 'workflow_dispatch' && inputs.dry-run) && github.token || secrets.GH_PAT }}
           version-source: package-json
           changelog: true
           if-exists: skip
