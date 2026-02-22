@@ -4,7 +4,7 @@ run-name: Publish [${{ github.event.release.tag_name }}]
 
 on:
   release:
-    types: [created]
+    types: [created, published]
 
 permissions:
   contents: read

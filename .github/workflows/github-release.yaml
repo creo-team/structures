@@ -4,6 +4,13 @@ run-name: Release [${{ github.ref_name }}]
 on:
   push:
     branches: [main]
+  workflow_dispatch:
+    inputs:
+      dry-run:
+        description: 'Preview only (no tags, releases, or commits)'
+        required: false
+        default: false
+        type: boolean
 
 permissions:
   contents: write
@@ -18,6 +25,9 @@ jobs:
 
       - uses: creo-team/action-release@v1
         with:
+          # PAT required for real releases (GITHUB_TOKEN-created releases don't trigger Publish)
+          token: ${{ (github.event_name == 'workflow_dispatch' && inputs.dry-run) && github.token || secrets.GH_PAT }}
           version-source: package-json
           changelog: true
           if-exists: skip
+          dry-run: ${{ github.event_name == 'workflow_dispatch' && inputs.dry-run }}

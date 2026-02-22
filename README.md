@@ -46,6 +46,10 @@ const region = AwsRegion.UsEast1
 | **Other** | `LanguageCode`, `Status` |
 | **Types** | `PackageJson`, `Person`, `Repository`, `Bugs`, `Dependencies`, etc. |
 
+## Publishing
+
+Releases are created on push to `main` via [action-release](https://github.com/creo-team/action-release). npm publish runs when a release is created. **Required:** Add a `GH_PAT` repo secret (PAT with `repo` scope) so the release event triggers the Publish workflow — releases created with the default `GITHUB_TOKEN` do not trigger other workflows.
+
 ## Creo Ecosystem
 
 - [@creo-team/eslint-config](https://www.npmjs.com/package/@creo-team/eslint-config) — shared ESLint config
