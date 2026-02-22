@@ -1,6 +1,6 @@
 {
   "name": "@creo-team/structures",
-  "version": "2.0.8",
+  "version": "2.0.9",
   "description": "Shared TypeScript structures — enums, interfaces, types — for consistency across Creo projects.",
   "author": "Creo Team",
   "license": "ISC",
