@@ -20,6 +20,7 @@ Shared TypeScript structures for **Creo** projects. Enums, interfaces, and types
 - **Enum values: PascalCase for display** — `Env.Production`, `Stage.Beta`
 - **Export aliases** — `Env` / `Environment` / `Stage` for flexibility
 - **No runtime deps** — pure TypeScript; zero dependencies in production
+- **Version bumps** — increment `package.json` version with every push to `main`. Feature branches: one bump before merge
 - **Conventional commits** — `feat(scope):`, `fix(scope):`, `refactor(scope):`
 
 ### Documentation Standards

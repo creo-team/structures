@@ -16,6 +16,7 @@ Instructions for AI coding agents working in this codebase. See [CLAUDE.md](CLAU
 - **Defensive guards** — verify assumptions with `if` checks and logging
 - **Enum values PascalCase** — `Env.Production`, `Stage.Beta`
 - **Export aliases** — `Env` / `Environment` / `Stage` for different naming preferences
+- **Version bumps** — increment `package.json` version with every push to `main`. Feature branches: one bump before merge
 - **Conventional commits** — `feat(scope):`, `fix(scope):`, `refactor(scope):`
 
 ## Verification
