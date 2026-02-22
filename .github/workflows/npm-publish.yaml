@@ -1,6 +1,6 @@
 # Filename must match npm Trusted Publisher config: npm-publish.yaml
 name: Publish
-run-name: Publish
+run-name: Publish [${{ github.event.workflow_run.head_branch || 'dry-run' }}]
 
 on:
   workflow_run:
@@ -20,6 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          fetch-depth: 0
           ref: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_sha || github.sha }}
 
       - uses: actions/setup-node@v4
