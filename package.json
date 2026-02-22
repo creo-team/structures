@@ -43,7 +43,7 @@
     "access": "public"
   },
   "devDependencies": {
-    "@creo-team/eslint-config": "^2.4.3",
+    "@creo-team/eslint-config": "^2.5.5",
     "@types/node": "^22.15.29",
     "eslint": "^9.39.3",
     "typescript": "^5.9.3",
