@@ -11,29 +11,10 @@ npm install @creo-team/structures
 ## Usage
 
 ```ts
-import {
-  Env,
-  Stage,
-  HttpStatus,
-  HttpMethod,
-  AwsRegion,
-  type PackageJson,
-} from '@creo-team/structures'
-
-// Environment / stage (aliases: Env, Environment, Stage)
-const stage: Stage = Stage.Production
-if (stage === Stage.Beta) {
-  console.log('Running in beta')
-}
-
-// HTTP
-if (status === HttpStatus.Ok) {
-  // ...
-}
-
-// AWS
-const region = AwsRegion.UsEast1
+import { Stage, HttpStatus, AwsRegion, type PackageJson } from '@creo-team/structures'
 ```
+
+See [`src/index.ts`](src/index.ts) for all available exports.
 
 ## Contents
 
@@ -49,6 +30,13 @@ const region = AwsRegion.UsEast1
 ## Publishing
 
 Releases are created on push to `main` via [action-release](https://github.com/creo-team/action-release). npm publish runs when the Release workflow completes successfully.
+
+## Docs
+
+| Document | Purpose |
+|----------|---------|
+| [`CLAUDE.md`](CLAUDE.md) | Code conventions and project guide |
+| [`AGENTS.md`](AGENTS.md) | AI agent instructions |
 
 ## Creo Ecosystem
 
