@@ -18,4 +18,4 @@ Publishing uses [npm Trusted Publishers](https://docs.npmjs.com/trusted-publishe
 
 ## Manual dry run
 
-Actions → **Publish** → **Run workflow** (runs `npm publish --dry-run`)
+Not available — publish runs only when a release is created.
