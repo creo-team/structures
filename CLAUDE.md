@@ -11,6 +11,9 @@ Shared TypeScript structures for **Creo** projects. Enums, interfaces, and types
 
 ## Key Conventions
 
+- **Never nest** — early returns, flat code. If you're indenting more than once, refactor
+- **No narration comments** — code speaks for itself. Only comment non-obvious intent or trade-offs
+- **Simple over clever** — readable beats terse
 - **Enum values: PascalCase for display** — `Env.Production`, `Stage.Beta`
 - **Export aliases** — `Env` / `Environment` / `Stage` for flexibility
 - **No runtime deps** — pure TypeScript; zero dependencies in production
