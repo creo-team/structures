@@ -17,6 +17,10 @@ Shared TypeScript structures for **Creo** projects. Enums, interfaces, and types
 - **Verb-driven function names** — prefer `get`, `remove`, `create`, `list`, `put`, `update` over `fetch`, `delete`, `post`
 - **Types in dedicated files** — interfaces, enums, and types live in `types.ts`
 - **Defensive guards** — double-check assumptions with `if` checks and logging before proceeding
+- **TypeScript only** — no `.js`/`.jsx` in application code. Strict mode enabled
+- **Turbopack** — use `--turbopack` flag for Next.js dev and build (where applicable)
+- **Latest stable versions** — stay current with Next.js, React, and dependencies. Adopt new features early
+- **Skeleton loading** — every async boundary needs a loading state. Use `loading.tsx`, `Suspense` fallbacks, and skeleton UI. No blank screens
 - **Enum values: PascalCase for display** — `Env.Production`, `Stage.Beta`
 - **Export aliases** — `Env` / `Environment` / `Stage` for flexibility
 - **No runtime deps** — pure TypeScript; zero dependencies in production
