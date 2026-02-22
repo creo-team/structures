@@ -23,9 +23,22 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: creo-team/action-release@v1
+      - id: release
+        uses: creo-team/action-release@v1
         with:
           version-source: package-json
           changelog: true
           if-exists: skip
           dry-run: ${{ github.event_name == 'workflow_dispatch' && inputs.dry-run }}
+
+      - if: steps.release.outputs.created == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'npm-publish.yaml',
+              ref: 'main',
+              inputs: { tag: '${{ steps.release.outputs.tag }}' }
+            })
