@@ -13,6 +13,8 @@ Instructions for AI coding agents working in this codebase. See [CLAUDE.md](CLAU
 - **Simple over clever** — readable beats terse
 - **Verb-driven names** — `get`, `remove`, `create`, `list` over `fetch`, `delete`, `post`
 - **Types in `types.ts`** — never scatter type definitions across implementation files
+- **Named imports** — prefer `{ thing } from 'thing'` over `import *`
+- **Named exports** — prefer named exports over `export default` (except framework-convention files)
 - **Defensive guards** — verify assumptions with `if` checks and logging
 - **TypeScript only** — no `.js`/`.jsx` in application code. Strict mode enabled
 - **Turbopack** — use `--turbopack` flag for Next.js dev and build (where applicable)

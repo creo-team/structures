@@ -16,6 +16,8 @@ Shared TypeScript structures for **Creo** projects. Enums, interfaces, and types
 - **Simple over clever** — readable beats terse
 - **Verb-driven function names** — prefer `get`, `remove`, `create`, `list`, `put`, `update` over `fetch`, `delete`, `post`
 - **Types in dedicated files** — interfaces, enums, and types live in `types.ts`
+- **Named imports** — prefer `{ thing } from 'thing'` over `import *`. Never use `import *` when named imports exist
+- **Named exports** — prefer named exports over `export default`. Exception: framework-convention files where default is required
 - **Defensive guards** — double-check assumptions with `if` checks and logging before proceeding
 - **TypeScript only** — no `.js`/`.jsx` in application code. Strict mode enabled
 - **Turbopack** — use `--turbopack` flag for Next.js dev and build (where applicable)
