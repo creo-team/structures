@@ -1,10 +1,10 @@
-# Required filename for npm Trusted Publisher (OIDC)
-name: npm Publish
-run-name: npm Publish · ${{ github.event.workflow_run.head_branch || 'dry-run' }}
+# Filename must match npm Trusted Publisher config: npm-publish.yaml
+name: Publish
+run-name: Publish
 
 on:
   workflow_run:
-    workflows: [GitHub Release]
+    workflows: [Release]
     types: [completed]
     branches: [main]
   workflow_dispatch:
@@ -24,12 +24,13 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 'lts/*'
+          node-version: '24'
+          registry-url: 'https://registry.npmjs.org'
           cache: 'npm'
 
       - run: npm ci
 
-      - name: Publish to npm
+      - name: Publish
         if: github.event_name == 'workflow_run'
         run: npm publish --provenance --access public
 

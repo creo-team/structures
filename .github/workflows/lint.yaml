@@ -1,5 +1,5 @@
 name: Lint
-run-name: Lint · ${{ github.ref_name }}
+run-name: Lint
 
 on:
   push:
