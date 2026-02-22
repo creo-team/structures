@@ -13,8 +13,8 @@ Publishing uses [npm Trusted Publishers](https://docs.npmjs.com/trusted-publishe
 
 ## Flow
 
-1. Push to `main` → GitHub Release creates tag/release
-2. npm Publish workflow runs → publishes to npm with provenance
+1. Push to `main` → Release workflow creates tag + GitHub release
+2. `release: created` fires → Publish workflow runs → publishes to npm with provenance
 
 ## Manual dry run
 
